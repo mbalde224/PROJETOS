@@ -76,3 +76,4 @@ int main()
     
     return 0;
 }
+Il y a beaucoup d'autres choses que vous pouvez ajouter au jeu de Sokoban, comme la gestion des caisses et des objectifs, la vérification de la victoire, etc. Si vous avez besoin d'aide pour implémenter ces fonctionnalités ou si vous avez des questions sur la façon de développer un jeu en C++ en général, n'hésitez pas à poser une question. Je serai heureux de vous aider.
