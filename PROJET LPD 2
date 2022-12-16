@@ -1,0 +1,78 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+
+using namespace std;
+
+const int ROWS = 10;
+const int COLS = 10;
+
+char grid[ROWS][COLS] = {
+  {'#', '#', '#', '#', '#', '#', '#', '#', '#', '#'},
+  {'#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#'},
+  {'#', ' ', '#', '#', '#', '#', '#', '#', ' ', '#'},
+  {'#', ' ', '#', ' ', ' ', ' ', ' ', '#', ' ', '#'},
+  {'#', ' ', '#', ' ', '#', '#', ' ', '#', ' ', '#'},
+  {'#', ' ', '#', ' ', ' ', ' ', ' ', '#', ' ', '#'},
+  {'#', ' ', '#', '#', '#', '#', '#', '#', ' ', '#'},
+  {'#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#'},
+  {'#', '#', '#', '#', '#', '#', '#', '#', '#', '#'},
+};
+
+int playerRow = 1;
+int playerCol = 1;
+
+int boxRow[3] = {2, 3, 4};
+int boxCol[3] = {2, 3, 4};
+
+void drawGame() {
+  for (int row = 0; row < ROWS; row++) {
+    for (int col = 0; col < COLS; col++) {
+      if (row == playerRow && col == playerCol) {
+        cout << "P";
+      } else {
+        cout << grid[row][col];
+      }
+    }
+    cout << endl;
+  }
+}
+#include <conio.h>
+void movePlayer(int row, int col) {
+  // Vérifie si la nouvelle position est valide
+  if (grid[row][col] != '#') {
+    playerRow = row;
+    playerCol = col;
+  }
+}
+
+
+int main()
+{
+    cout<<"Hello World";
+    
+    while (true) {
+  drawGame();
+
+  char input = getch();
+
+  // Déplace le joueur en fonction de l'entrée clavier
+  if (input == 'w') {
+    movePlayer(playerRow - 1, playerCol);
+  } else if (input == 'a') {
+    movePlayer(playerRow, playerCol - 1);
+  } else if (input == 's') {
+    movePlayer(playerRow + 1, playerCol);
+  } else if (input == 'd') {
+    movePlayer(playerRow, playerCol + 1);
+  }
+}
+    
+    return 0;
+}
